@@ -7,33 +7,35 @@
     <link rel="icon" href="https://icons.iconarchive.com/icons/iconarchive/childrens-book-animals/128/Parrot-icon.png" type="image/x-icon" />
     <title>The Band</title>
     <link rel="stylesheet" href="./asserts/css/grid.css">
+
     <link rel="stylesheet" href="./asserts/css/style.css">
+    <link rel="stylesheet" href="./asserts/css/responsive.css">
     <link rel="stylesheet" href="./asserts/font/themify-icons-font/themify-icons/themify-icons.css">
 </head>
  <body> 
    <div id="main">
     <div id="header">
-       <uL id="nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#band">Band</a></li>
-        <li><a href="#tour">Tour</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-            <a href="">
-                MORE
-            <i class="nav-more-down ti-angle-down"> </i>
-            </a>
+       <ul id="nav">
+        <li> <a id = 'home' href="#">Home</a></li>
+        <li ><a href="#band">Band</a></li>
+        <li ><a href="#tour">Tour</a></li>
+        <li ><a href="#contact">Contact</a></li>
+        <li><a href="#"> MORE<i class="nav-more-down ti-angle-down"> </i></a>
             <ul class="subnav">
                 <li><a href="#">Merchandise</a></li>
                 <li><a href="#">Extras</a></li>
                 <li><a href="#">Media</a></li>
             </ul>
         </li>
-       </uL>
+       </ul>
+       
     <!--Begin: Search button-->
     <div class="search-btn">
         <i class="search-icon ti-search"></i>
-    </div>   
+    </div>  
+    <div id="mobile-menu">
+        <i class="ti-menu"></i>
+    </div> 
     </div>
     
     <div id="slider">
@@ -49,15 +51,15 @@
         <p class="section-sub-heading">We love music</p>
         <p class="about-text">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <div class="member-list">
-            <div class="member-item">
+            <div class="member-item member-mobile">
                 <div class="member-name">Name</div> 
                 <img src="/TheBrand/asserts/img/slider/bandmember.jpg" alt="Name" class="member-img">
             </div>
-            <div class="member-item">
+            <div class="member-item member-mobile">
                 <div class="member-name">Name</div> 
                 <img src="/TheBrand/asserts/img/slider/bandmember.jpg" alt="Name" class="member-img">
             </div>
-            <div class="member-item">
+            <div class="member-item member-mobile">
                 <div class="member-name">Name</div> 
                 <img src="/TheBrand/asserts/img/slider/bandmember.jpg" alt="Name" class="member-img">
             </div>
@@ -116,18 +118,18 @@
         <h2 class="section-heading">CONTACT</h2>
         <p class="section-sub-heading">Fan? Drop a note!</p>
         <div class="row2 contact-content">
-            <div class="col2 col2-half contact-infor">
+            <div class="col-mobile-contact col2 col2-half contact-infor">
                 <p><i class="ti-location-pin"></i>Chicago, US</p>
                 <p><i class="ti-mobile"></i>Phone: +00 151515</p>
                 <p><i class="ti-email"></i>Email: mail@mail.com</p>
             </div>
-            <div class="col2 col2-half contact-form">
+            <div class="col-mobile-contact col2 col2-half contact-form">
                 <form action="">
                     <div class="row2">
-                        <div class="col2 col2-half contact-name ">
+                        <div class="col2 col2-half contact-name col-full-mobile">
                             <input type="text" name="" id="" placeholder="Name" required class="form-control">
                         </div>
-                        <div class="col2 col2-half contact-email">
+                        <div class="col2 col2-half contact-email col-full-mobile">
                             <input type="email" name="" id="" placeholder="Email" required class="form-control">
                         </div>
                     </div>
@@ -170,13 +172,13 @@
    <div class="grid wide">
     <div class="hiihi "></div>
  <div class="row ">
-    <div class="col l-4 c-6  ">
+    <div class="col l-4 m-6 c-12  ">
         <div class="column">Column1</div>
     </div>
-    <div class="col l-4 c-6 ">
+    <div class="col l-4 m-6 c-12 ">
         <div class="column">Column2</div>
     </div>
-    <div class="col l-4 c-6 ">
+    <div class="col l-4 m-6 c-12 ">
         <div class="column">Column3</div>
     </div>
 </div>
@@ -186,6 +188,10 @@
 </body> 
 </html>
 <script>
+    
+    var header = document.getElementById('header');
+    var modelMenu = document.getElementById('mobile-menu')
+    var headerheight = header.clientHeight
     const modal = document.querySelector('.js-modal');
     const buyBtns = document.querySelectorAll('.js-buy-tickets')
     const closebuy = document.querySelector('.js-modal-close')
@@ -199,9 +205,37 @@
     for(const buyBtn of buyBtns){
         buyBtn.addEventListener('click',showBuyTickets)
     }
-    modalcontainer.addEventListener('click',function(event){
-        event.stopPropagation()
-    })
+  
+    modelMenu.onclick=function(){
+        var isClose = header.clientHeight === headerheight;
+        if(isClose){
+            header.style.height = 'auto';
+        } 
+        else{
+            header.style.height = null;
+        }
+    }
+   
+    var menuItems = document.querySelectorAll('#nav li a[href *= "#" ]');
+  
+    for(var i = 0; i< menuItems.length; i++){
+        var menuItem = menuItems[i];
+       
+
+        menuItem.onclick= function(){
+            var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+            if(!isParentMenu){
+            header.style.height = "";
+        }
+        else{
+           
+
+        }
+    }
+
+    }
+
+ 
    closebuy.addEventListener('click',hideBuyTickets)
    modal.addEventListener('click',hideBuyTickets)
 </script>

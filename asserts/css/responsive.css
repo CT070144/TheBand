@@ -1,0 +1,101 @@
+/*PC*/
+@media  screen and (min-width: 1024px) {
+  
+
+
+}
+/*Tablet*/
+@media  screen and (min-width: 770px) and (max-width: 1023px) {
+
+    #content .content-section{
+    padding-left: 16px;
+    padding-right: 32px;
+    max-width: 100%;
+
+}
+
+}
+/*Mobile*/
+@media screen and (max-width: 740px) {
+    #header{
+        overflow: hidden;
+    }
+ 
+ 
+    #nav #home {
+        display: inline-block;
+    }
+
+    #nav > li {
+        display:block;
+        width: 100%;
+        
+    }
+    #nav .subnav{
+        position: initial;
+        width: 300px;
+        
+    }
+    #nav .subnav a{
+        padding: 0 36px;
+    }
+    #nav .subnav > li{
+        width: 100%;
+        background-color: rgb(94, 95, 95);
+    }
+    #nav .subnav li{
+        display: block;
+        width: 100%;
+    }
+    #content .content-section{
+        padding-left: 16px;
+        padding-right: 32px;
+        max-width: 100%;
+    
+    }
+
+    #header .search-btn{
+        display: none;
+        
+
+    }
+    #header #mobile-menu{
+        
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        color: aliceblue;
+    }
+    #content .member-mobile{
+        width: 100%;
+        margin-top: 30px;
+    }
+    #content .member-img{
+        width: 60%;
+
+    }
+    #slider .content{
+        display: none;
+    }
+    .place-item{
+        width: 100%;
+        margin-top: 16px;
+    }
+   #contact .col-mobile-contact{
+       width: 100%;
+}
+    #contact .mobile-form{
+        width: 100%;
+        padding: 0px 8px;
+        margin-bottom: 15px;
+
+    }
+    #contact .col-full-mobile{
+        width: 100%;
+        margin-top: 8px;
+    }
+   
+  
+
+}   

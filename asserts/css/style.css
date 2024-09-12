@@ -18,16 +18,18 @@ html{
     clear:both;
 }
 #main {
-     
+     width: 100%;
+     margin-right: 0;
 }
 #header {
 
+    
     z-index: 1;
      position: fixed;
      top: 0;
      left: 0;
      right: 0;
-     height: 46px;
+     height: 48px;
      background-color: #000000;
 
 }
@@ -84,6 +86,7 @@ html{
    list-style-type: none;
  
 }
+#header #mobile-menu,
 #header .search-btn{
     color: #fff;
     float: right;
@@ -96,7 +99,13 @@ html{
 #header .search-btn:hover{
     background-color:#f44336!important;
 }
-
+#header #mobile-menu{
+    display: none;
+}
+#header #mobile-menu:hover{
+    background-color: #ccc;
+    color: #000;
+}
 #slider {
     background: url('/TheBrand/asserts/img/slider/chicago.jpg') top center / cover no-repeat;
     margin-top: 4.6rem;
@@ -125,6 +134,7 @@ html{
 
 #content .content-section{
     max-width: 800px;
+  
     padding: 64px 0px 112px;
     margin-left: auto;
     margin-right: auto;
@@ -217,7 +227,7 @@ html{
     float: left;
     width: 33.3333%;
     padding: 0 8px;
-
+   
 
 }
 .place-about{
@@ -375,7 +385,7 @@ html{
 .col-third{
     width: 33.3333%;
 }
-.col-full{
+.col2-full{
     width: 100%;
 }
 
@@ -409,6 +419,7 @@ html{
 }
 .contact-message .form-control{
    margin-top: 8px;
+   
 }
 
 .pull-right{
@@ -469,3 +480,4 @@ html{
 .grid {
     display: none;
 }
+
